@@ -1,0 +1,69 @@
+.img{
+    width: 95%;
+    height: auto;
+    border-radius: 1rem;
+    background-image: url("https://i.ibb.co/HNj8tBK/anna.jpg");
+}
+.data{
+    position: relative ;
+    width: 95%;
+    height: auto;
+    text-align: start;
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+.info-content{
+    max-width: 80rem !important;
+    margin: 0;
+}
+.data-content{
+
+    position: relative;
+    width: 100%;
+    padding-bottom: 53.4375%;
+}
+.aspect-ratio{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+@media screen and (max-width: 768px){
+    .data-content{
+        padding-bottom: 0!important;
+        overflow: visible !important;
+    }
+    .container-data{
+        padding-right: 0;
+        padding-left: 0;
+    }
+    .aspect-ratio{
+        position: relative;
+    }
+}
+.item-g{
+    position: relative;
+    width: 85%;
+    padding-bottom: 47.8125%;
+    background-color: rgb(36, 40, 59);
+    border-radius: .5rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top ;
+    margin-right: 1rem;
+    overflow: hidden;
+}
+.item-text-g{
+    color: rgb(255, 255, 255);
+    text-shadow: .0rem .05rem .2rem black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, .6);
+    text-align: center;
+}

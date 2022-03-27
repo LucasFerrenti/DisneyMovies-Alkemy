@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Inicio</title>
+        <link rel="stylesheet" href="libs/bootstrap-5.1.3-dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/nav.css">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="fonts/icomoon/style.css">
+    </head>
+
+    <body style="background-color: rgb(42, 49, 80);">
+
+        <div class="site-mobile-menu site-navbar-target">
+            <div class="site-mobile-menu-header">
+                <div class="site-mobile-menu-close mt-3">
+                    <span class="icon-close2 js-menu-toggle"></span>
+                </div>
+            </div>
+            <div class="site-mobile-menu-body"></div>
+        </div>
+
+        <header class="site-navbar site-navbar-target " role="banner">
+            <div class="row align-items-between position-relative">
+                <div class="col-4">
+                    <div class="site-logo">
+                        <h3 class="font-weight-bold text-white">
+                            Disney Movies
+                        </h3>
+                    </div>
+                </div>
+                <div dir="rtl" class="col-8">
+                    <span class="d-inline-block d-lg-block">
+                        <a href="#"
+                            class="text-black site-menu-toggle js-menu-toggle py-5">
+                            <span
+                                class="icon-menu h3 text-white">
+                            </span>
+                        </a>
+                    </span>
+                    <nav class="site-navigation text-right ml-auto d-none d-lg-none" role="navigation">
+                        <ul class="site-menu main-menu js-clone-nav ml-auto ">
+                            <li>
+                                <a href="Index.html" class="nav-link movies">Peliculas y Series</a>
+                            </li>
+                            <li>
+                                <a href="Index.html?content=characters" class="nav-link characters">Personajes</a>
+                            </li>
+                            <li>
+                                <a href="Login.html?action=logout" class="nav-link danger">Cerrar Sesion</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <div id="app">
+            <div class="container-fluid mb-3">
+                <div class="row">
+                    <div class="col m-3 text-white">
+                        <h3 v-if="type == 'movies'">Peliculas y Series</h3>
+                        <h3 v-else>Personajes</h3>
+                    </div>
+                </div>
+                <div v-if="type == 'movies'" style="margin-left: 1rem; margin-right: 0;" class="row row-cols-1  row-cols-sm-2  row-cols-md-3 row-cols-lg-4  row-cols-xl-6 gy-4">
+                    <div v-for="pelicula in content" class="col p-0">
+                        <div class="row justify-content-center">
+                            <a :href="'Detail.html?content=movies&id=' + pelicula.id" class="item" :style="{ backgroundImage: 'url(' + pelicula.image + ')' }">
+                                <div class="row item-text justify-content-between">
+                                    <div class="col-auto pl-3">
+                                        <h5 class="m-0 p-1">{{pelicula.title}}</h5>
+                                    </div>
+                                    <div class="col-auto">
+                                        <h5 class="m-0 p-1" >{{pelicula.creationDate | ageFormat}}</h5>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div v-else style="margin-left: 1rem; margin-right: 0;" class="row row-cols-1  row-cols-sm-2  row-cols-md-3 row-cols-lg-4  row-cols-xl-6 gy-4">
+                    <div v-for="personaje in content" class="col p-0">
+                        <div class="row justify-content-center">
+                            <a :href="'Detail.html?content=characters&id=' + personaje.id" class="item" :style="{ backgroundImage: 'url(' + personaje.image + ')' }">
+                                <div class="row item-text justify-content-center">
+                                    <h5>{{personaje.name}}</h5>
+                                </div>
+                            <a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="libs/bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
+        <script src="libs/jquery-3.6.0.js"></script>
+        <script src="libs/jquery.sticky.js"></script>
+        <script src="libs/axios-master/dist/axios.min.js"></script>
+        <script src="libs/vue.js"></script>
+        <script src="libs/moment.js"></script>
+        <script src="js/nav.js"></script>
+        <script src="js/listed.js"></script>
+    </body>
+</html>

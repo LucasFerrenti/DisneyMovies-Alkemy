@@ -1,0 +1,28 @@
+body{
+    caret-color: transparent;
+}
+.item{
+    position: relative;
+    width: 85%;
+    padding-bottom: 47.8125%;
+    background-color: rgb(36, 40, 59);
+    border-radius: .5rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top ;
+    margin-right: 1rem;
+    overflow: hidden;
+
+}
+.item-text{
+    color: rgb(255, 255, 255);
+    text-shadow: .0rem .05rem .2rem black;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, .6);
+    text-align: center;
+    align-items: center;
+}
